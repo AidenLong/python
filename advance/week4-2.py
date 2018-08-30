@@ -228,8 +228,8 @@ sorted = np.msort(c)
 print("sorted =", sorted)
 
 N = len(c)
-print("middle =", sorted[(N - 1) / 2])
-print("average middle =", (sorted[N / 2] + sorted[(N - 1) / 2]) / 2)
+print("middle =", sorted[(int)((N - 1) / 2)])
+print("average middle =", (sorted[(int)(N / 2)] + sorted[(int)((N - 1) / 2)]) / 2)
 
 print("variance =", np.var(c))
 print("variance from definition =", np.mean((c - c.mean()) ** 2))
@@ -265,7 +265,7 @@ def datestr2num(s):
    return datetime.strptime(s, "%d-%m-%Y").date().weekday()
 
 dates, close=np.loadtxt('data.csv', delimiter=',', usecols=(1,6), 
-                         converters={1: datestr2num}, unpack=True)
+                         converters={1: datestr2num}, unpack=True, encoding='latin1')
 print("Dates =", dates)
 
 averages = np.zeros(5)
@@ -292,7 +292,7 @@ def datestr2num(s):
    return datetime.strptime(s, "%d-%m-%Y").date().weekday()
 
 dates, open, high, low, close=np.loadtxt('data.csv', delimiter=',', 
-         usecols=(1, 3, 4, 5, 6), converters={1: datestr2num}, unpack=True)
+         usecols=(1, 3, 4, 5, 6), converters={1: datestr2num}, unpack=True, encoding='latin1')
 close = close[:16]
 dates = dates[:16]
 
