@@ -106,8 +106,8 @@ except TypeError:
     print("TypeError")
 #Type error
 
-print("In: float(42.0 + 1.j)")
-print(float(42.0 + 1.j))
+print("In: float(42.0 + 1.0)")
+print(float(42.0 + 1.0))
 #Type error
 
 # 数据类型转换
@@ -242,7 +242,7 @@ data[names == 'Bob', 2:]
 data[names == 'Bob', 3]
 
 names != 'Bob'
-data[-(names == 'Bob')]
+data[~(names == 'Bob')]
 
 mask = (names == 'Bob') | (names == 'Will')
 mask
@@ -378,15 +378,15 @@ print(b.tolist())
 
 print(b.tostring())
 
-print(np.fromstring(
-    '\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\x08@\x00\x00\x00\x00\x00\x00\x00@',
-    dtype=complex))
+# print(np.fromstring(
+#     '\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\x08@\x00\x00\x00\x00\x00\x00\x00@',
+#     dtype=complex))
 
 print(np.fromstring('20:42:52', sep=':', dtype=int))
 
 print(b)
 
-print(b.astype(int))
+# print(b.astype(int))
 
 print(b.astype('complex'))
 
